@@ -1,6 +1,6 @@
 {
   "name": "digitalocean-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,14 @@
   },
   "author": "Dinis Cruz <dinis.cruz@owasp.org> (http://blog.diniscruz.com/)",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:o2platform/digitalocean-cli.git"
+  },
+  "homepage": "https://github.com/o2platform/digitalocean-cli",
+  "bugs": {
+    "url": "https://github.com/o2platform/digitalocean-cli/issues"
+  },
   "dependencies": {
     "commander": "^2.8.1",
     "do-wrapper": "^1.1.3",

@@ -40,24 +40,38 @@ export api_key={key}
 
 ### commands
 
-**-h** - shows the commands availabe
-```
-./do-cli -h
-```
+#### -h
 
-**list** - gets list of droplets
+Shows the commands availabe: ```do-cli -h```
 
-```
-./do-cli list
-```
+### list
 
-**info {id}** - gets droplet information
+Gets list of droplets. Here is the info provided after executing ```./do-cli list```
 
 ```
-./do-cli info {id}
+id | name | status | region | locked | ip
+5467866 | test-docker |  active | lon1 | false | 46.101.48.220
 ```
 
-**create** - creates a new droplet, using these values
+If this box was setup with an ssh key that currently exists on the local box,
+you can connect to it using:
+
+```ssh root@{ip}``` which in the example above is ```ssh root@46.101.48.220```
+
+Note: if you are creating and deleting images regularly, digitalocean tends to reuse the IPs,
+which means that you will see an ```WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!``` error
+(with ssh failing to connect)
+
+One way to deal with this is to use the command ```ssh-keygen -R {ip}``` (in this case ```ssh-keygen -R 46.101.48.220```).
+After that, the ```ssh root@{ip}`` will work
+
+#### info {id}
+
+Gets droplet information: ```./do-cli info {id}```
+
+#### create
+
+Creates a new droplet, using these values
 
 ```coffee
 configuration =
@@ -76,19 +90,19 @@ configuration =
 ./do-cli create
 ```
 
-**delete {id}** - delete Droplet <id>
+#### delete {id}
 
-```
-./do-cli delete {id}
-```
+Delete Droplet with <id>: ```./do-cli delete {id}```
 
-**delete-all**  - deleting all droplets
 
-```
-./do-cli delete-all
-```
+#### Delete-all
 
-**repl** - starts a javascript repl with the ```that``` variable set to the
+Deletes all droplets: ```./do-cli delete-all```
+
+
+#### repl
+
+Starts a javascript repl with the ```that``` variable set to the
 ```do-wrapper``` api. For example, here is how the ```dropletsGetAll``` is invoked
 
 ```

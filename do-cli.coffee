@@ -9,9 +9,12 @@ api_key = process.env.api_key
 log 'DigitalOcean CLI';
 log '----------------'
 
+if not api_key
+  log 'Error: the environment variable api_key is not set.'
+  process.exit (1)
+
 program
   .version('0.0.1')
-  #.option('-d, --droplets', 'List droplets')
 
 api = new DigitalOcean(api_key, 25);
 
@@ -38,11 +41,11 @@ program.command 'info'
 
 
 program.command 'create'
-       .description 'Gets list of droplets'
+       .description 'Creates a new droplet'
        .action (env, options)->
          log 'Creating new droplet'
          configuration =
-           "name": "tm-test",
+           "name": "new-droplet",
            "region": "lon1",
            "size": "512mb",
            "image": "ubuntu-14-04-x64",
@@ -74,7 +77,10 @@ program.command 'delete-all'
                if res.statusCode isnt 204
                  log body
 
-           #else
-          #   log "Droplet is being deleted"
+program.command 'repl'
+       .description 'provides a repl to the base api'
+       .action (env, options)->
+         api.repl_Me()
+
 
 program.parse(process.argv);

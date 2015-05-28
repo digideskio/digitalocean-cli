@@ -52,7 +52,7 @@ export api_key={key}
 
 **create** - creates a new droplet, using these values
 
-```json
+```coffee
 configuration =
   "name": "new-droplet",
   "region": "lon1",

@@ -1,8 +1,10 @@
 {
   "name": "digitalocean-cli",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
-  "main": "index.js",
+  "bin": {
+    "do-cli": "./do-cli.coffee"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +19,7 @@
     "url": "https://github.com/o2platform/digitalocean-cli/issues"
   },
   "dependencies": {
+    "coffee-script": "^1.9.3",
     "commander": "^2.8.1",
     "do-wrapper": "^1.1.3",
     "fluentnode": "^0.4.0"

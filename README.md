@@ -3,7 +3,7 @@ NodeJS CLI for [DigitalOcean]([https://www.digitalocean.com)
 
 Written in CoffeeScript, based on [do-wrapper](https://www.npmjs.com/package/do-wrapper) npm package
 
-### install
+## Install
 
 ```
 npm install -g digitalocean-cli
@@ -19,7 +19,7 @@ do-cli -h
 ```
 
 
-### install from source
+## Install from source
 
 ```
 git clone git@github.com:o2platform/digitalocean-cli.git
@@ -29,7 +29,7 @@ npm install
 
 After install you can use ```./do-cli.coffee {command}```
 
-### configure
+## Configure
 
 You will need to set the DigitalOcean API Key, for example in OSX you can use:
 
@@ -38,7 +38,7 @@ export api_key={key}
 ```
 
 
-### commands
+## Commands
 
 #### -h
 
@@ -109,6 +109,6 @@ Starts a javascript repl with the ```that``` variable set to the
 [fluentnode] repl> that.dropletsGetAll({}, function (err, res, body) { console.log(body)})
 ```
 
-### issues/bugs
+## Issues/bugs
 
 If you have a problem or idea for new feature please [open an issue for it](https://github.com/o2platform/digitalocean-cli/issues)

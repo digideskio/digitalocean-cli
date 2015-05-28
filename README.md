@@ -3,6 +3,22 @@ NodeJS CLI for [DigitalOcean]([https://www.digitalocean.com)
 
 Written in CoffeeScript, based on [do-wrapper](https://www.npmjs.com/package/do-wrapper) npm package
 
+### install
+
+```
+npm install -g digitalocean-cli
+```
+
+This will add a ```do-cli``` mapping (symlinked into ./do-cli.cofffe),
+which can be used like this ```do-cli.coffee {command}```
+
+See list of commands bellow, or just execute
+
+```
+do-cli -h
+```
+
+
 ### install from source
 
 ```
@@ -11,16 +27,7 @@ cd digitalocean-cli
 npm install
 ```
 
-With cli invoked using ```./do-cli.coffee {command}```
-
-
-### install from npm
-
-```
-npm install digitalocean-cli
-```
-
-With cli invoked using ```./node_modules/digitalocean-cli/do-cli.coffee {command}```
+After install you can use ```./do-cli.coffee {command}```
 
 ### configure
 

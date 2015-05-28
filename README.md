@@ -3,13 +3,24 @@ NodeJS CLI for [DigitalOcean]([https://www.digitalocean.com)
 
 Written in CoffeeScript, based on [do-wrapper](https://www.npmjs.com/package/do-wrapper) npm package
 
-# install
+# install from source
 
 ```
 git clone git@github.com:o2platform/digitalocean-cli.git
 cd digitalocean-cli
 npm install
 ```
+
+With cli invoked using ```./do-cli.coffee {command}```
+
+
+# install from npm
+
+```
+npm install digitalocean-cli
+```
+
+With cli invoked using ```./node_modules/digitalocean-cli/do-cli.coffee {command}```
 
 # configure
 
@@ -19,11 +30,6 @@ You will need to set the DigitalOcean API Key, for example in OSX you can use:
 export api_key={key}
 ```
 
-the commands are invoked using
-
-```
-./do-cli {command}
-```
 
 # commands
 

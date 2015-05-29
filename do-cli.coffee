@@ -19,7 +19,7 @@ program
 api = new DigitalOcean(api_key, 25);
 
 
-user_data= "./tm_install.sh".file_Contents()
+#user_data= "./tm_install.sh".file_Contents()
 
 program.command 'list'
        .description 'Gets list of droplets'
@@ -34,7 +34,7 @@ program.command 'info'
        .description 'Gets droplet information'
        .action (env, options)->
          id = options.parent.args.first()
-         log "Deleting Droplet with id #{id}"
+         log "Info about Droplet with id #{id}"
          api.dropletsGetById id,  (err, res, body)->
            #if res.statusCode isnt 204
            log body.json_Pretty()
@@ -52,14 +52,15 @@ program.command 'create'
            "ssh_keys": ['0d:53:e1:59:9f:f1:41:26:a8:a7:ac:9f:d3:90:45:c8'],
            "backups": false,
            "ipv6": true,
-           "user_data": user_data,
+           #"user_data": user_data,
+           "user_data": null,
            "private_networking": null
          api.dropletsCreate configuration,  (err, res, body)->
            log "New Droplet created with id: #{body.droplet.id}"
            #log body.json_Pretty()
 
 program.command 'delete'
-       .description 'Delete Droplet <id>'
+       .description 'Delete Droplet {id}'
        .action (env, options)->
          id = options.parent.args.first()
          log "Deleting Droplet with id #{id}"

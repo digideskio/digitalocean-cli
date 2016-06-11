@@ -1,3 +1,9 @@
-/**
- * Created by diniscruz on 11/06/2016.
- */
+require('coffee-script/register');
+DigitalOcean_API = require('./src/DigitalOcean_API');
+
+do_Api = new DigitalOcean_API()
+
+do_Api.list(function (data) {
+    console.log(data)
+
+})

@@ -9,13 +9,14 @@ describe 'DigitalOcean_API', ->
 
   ### method's tests ###
 
-  it 'list',(done)->
+  xit 'create', (done)->
     using new DigitalOcean_API, ->
-      @.list (data)->
-        data.assert_Contains '      id |                 name |     status |     region |     locked |         ip'
-        data.split("".line()).assert_Size_Is_Bigger_Than 1
-        done() 
-
+      @.create (droplet)->        
+        droplet
+        droplet.assert_Is_Object()
+        droplet.id.assert_Is_Number()
+        done()
+        
   it 'info', (done)->
     using new DigitalOcean_API, ->
       @.api.dropletsGetAll {}, (err, res, body)=>
@@ -24,6 +25,13 @@ describe 'DigitalOcean_API', ->
         @.info options, (data)->
           data.assert_Contains id
           done()
+
+  it 'list',(done)->
+    using new DigitalOcean_API, ->
+      @.list (data)->
+        data.assert_Contains '      id |                 name |     status |     region |     locked |         ip'
+        data.split("".line()).assert_Size_Is_Bigger_Than 1
+        done()
 
   ### misc tests ###
   it 'should have @.api_key set from environment variable', ->

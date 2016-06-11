@@ -23,7 +23,8 @@
     "commander": "^2.9.0",
     "do-wrapper": "^3.6.1",
     "dotenv": "^2.0.0",
-    "fluentnode": "^0.6.1"
+    "fluentnode": "^0.6.1",
+    "sprintf-js": "^1.0.3"
   },
   "devDependencies": {
     "dotenv": "^2.0.0",

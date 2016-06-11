@@ -6,7 +6,7 @@
     "do-cli": "./do-cli.coffee"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers coffee:coffee-script/register --recursive"
   },
   "author": "Dinis Cruz <dinis.cruz@owasp.org> (http://blog.diniscruz.com/)",
   "license": "ISC",

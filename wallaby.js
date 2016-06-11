@@ -1,6 +1,7 @@
 module.exports = function ( ) {
     return {
         files: [
+            { pattern: '.env'},
             { pattern: 'src/**/*.coffee'}
         ],
 
@@ -13,5 +14,8 @@ module.exports = function ( ) {
         env: {
             type: 'node'
         },
+        setup: function (wallaby) {
+            require('dotenv').config()
+        }
     };
 };
